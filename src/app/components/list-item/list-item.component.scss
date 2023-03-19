@@ -1,0 +1,21 @@
+.d-flex{
+    display: flex !important;
+} 
+.align-items-center{
+    align-items: center !important;
+} 
+
+.justify-content-center{
+    justify-content: center !important;
+}
+
+.delete-button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: .3rem !important;
+}
+
+.line-through{
+    text-decoration: line-through;
+}

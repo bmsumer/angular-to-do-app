@@ -1,0 +1,9 @@
+<input class="form-check-input mx-2 my-1" type="checkbox" value="" id="{{index}}" [(ngModel)]="toDo.isDo" (click) = "changeCheckBox(index)">
+<label class="form-check-label" for="{{index}}" [ngClass]="toDo.isDo == true ? 'line-through' : ''">
+    {{
+        toDo.listItem
+    }}
+</label>
+<button class="btn btn-sm btn-danger delete-button mx-3 my-0"(click)="clickDeleteButton(index)">
+    <fa-icon [icon]="faTrash"></fa-icon>
+</button>

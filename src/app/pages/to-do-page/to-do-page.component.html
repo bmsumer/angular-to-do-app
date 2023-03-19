@@ -1,0 +1,31 @@
+<div class="row d-flex align-items-center justify-content-center mt-5">
+    <h1 class="w-auto">To-Do List</h1>
+</div>
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="w-50">
+        <div class="input-group mb-3">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Add To-Do Item" 
+                [(ngModel)]="newItem.listItem"
+            >
+            <div class="input-group-append">
+                <button class="btn btn-success input-group-text" (click)="addListItem()" [disabled]="newItem.listItem.length == 0">Add</button>
+            </div>
+        </div>
+        <div class="">
+            <ul class="list-group d-flex align-items-center justify-content-center">
+                <li class="list-group-item w-100 d-flex align-items-center" *ngFor="let listItem of toDoList; let i = index">
+                    <app-list-item 
+                        [toDo] = "listItem" 
+                        [index] = "i"
+                        (deleteEvent)="deleteListItem($event)"
+                        (isDoEvent)="changeCheckBox($event)"
+                    ></app-list-item>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
+
